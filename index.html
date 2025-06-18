@@ -325,18 +325,68 @@
             gap: 40px;
             margin-top: 60px;
         }
-
         .sample-card {
             background: rgba(255,255,255,0.05);
             padding: 40px 30px;
             border-radius: 10px;
             text-align: left;
             border: 1px solid rgba(255,255,255,0.1);
-            transition: transform 0.3s;
+            transition: all 0.4s ease-in-out;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        /* لایه پایه برای همه کارت‌ها */
+        .sample-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+            z-index: -1;
         }
 
         .sample-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px) scale(1.03);
+            color: white;
+        }
+
+        .sample-card:hover::before {
+            opacity: 0.4; /* شفافیت عکس هنگام هاور */
+        }
+
+        /* --- عکس‌های مخصوص هر کارت --- */
+
+        /* عکس برای کارت اول (spooder_console) */
+        .sample-card:nth-child(1)::before {
+            background-image: url('Screenshot 2025-06-18 082027.png');
+        }
+
+        /* عکس برای کارت دوم (Falcon Client) */
+        .sample-card:nth-child(2)::before {
+            background-image: url('Screenshot 2025-06-18 082435.png');
+        }
+
+        /* عکس برای کارت سوم (Beauty Clinic Theme) */
+        .sample-card:nth-child(3)::before {
+            background-image: url('Screenshot 2025-06-18 080757.png');
+        }
+
+        /* عکس برای کارت چهارم (NerdIt - Figma) */
+        .sample-card:nth-child(4)::before {
+            background-image: url('Screenshot 2025-06-18 080924.png');
+        }
+
+
+        .sample-card h3, .sample-card p, .sample-card .btn {
+            position: relative;
+            z-index: 2;
         }
 
         .sample-card h3 {
@@ -600,7 +650,7 @@
                 <a href="https://github.com/MrRMansd01/spooder_console.git" class="btn btn-secondary" target="_blank">View on GitHub</a>
             </div>
             <div class="sample-card">
-                <h3>Falcon Client - Frontend</h3>
+                <h3>FalconClient - Minecraft Launcher</h3>
                 <p>The frontend for the Falcon Client, designed to be user-friendly and visually appealing.</p>
                 <a href="https://github.com/MrRMansd01/falcon-client-front.git" class="btn btn-secondary" target="_blank">View on GitHub</a>
             </div>
