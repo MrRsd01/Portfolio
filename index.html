@@ -10,14 +10,16 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+    
         body {
             font-family: 'Arial', sans-serif;
             background: #0a0a0a;
             color: white;
             overflow-x: hidden;
+            /* برای شکستن کلمات طولانی و جلوگیری از سرریز شدن متن */
+            word-wrap: break-word; 
         }
-
+    
         .hero-section {
             height: 100vh;
             background: linear-gradient(180deg, #1a1a3e 0%, #2d1b69 50%, #4a2c7d 100%);
@@ -25,7 +27,7 @@
             display: flex;
             flex-direction: column;
         }
-
+    
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -34,19 +36,19 @@
             position: relative;
             z-index: 100;
         }
-
+    
         .logo {
             font-size: 24px;
             font-weight: bold;
             letter-spacing: 3px;
         }
-
+    
         .nav-links {
             display: flex;
             list-style: none;
             gap: 40px;
         }
-
+    
         .nav-links a {
             color: white;
             text-decoration: none;
@@ -54,11 +56,11 @@
             opacity: 0.8;
             transition: opacity 0.3s;
         }
-
+    
         .nav-links a:hover {
             opacity: 1;
         }
-
+    
         .hero-content {
             flex: 1;
             display: flex;
@@ -67,36 +69,36 @@
             padding: 0 80px;
             position: relative;
         }
-
+    
         .hero-text {
             max-width: 500px;
         }
-
+    
         .hero-subtitle {
             font-size: 18px;
             opacity: 0.7;
             margin-bottom: 20px;
         }
-
+    
         .hero-title {
             font-size: 64px;
             font-weight: 300;
             line-height: 1.1;
             margin-bottom: 20px;
         }
-
+    
         .hero-name {
             font-size: 24px;
             color: #4a90e2;
             margin-bottom: 40px;
             font-weight: 500;
         }
-
+    
         .hero-buttons {
             display: flex;
             gap: 20px;
         }
-
+    
         .btn {
             padding: 15px 30px;
             border: none;
@@ -107,22 +109,22 @@
             text-decoration: none;
             display: inline-block;
         }
-
+    
         .btn-primary {
             background: #4a90e2;
             color: white;
         }
-
+    
         .btn-secondary {
             background: transparent;
             color: white;
             border: 1px solid rgba(255,255,255,0.3);
         }
-
+    
         .btn:hover {
             transform: translateY(-2px);
         }
-
+    
         .profile-image {
             position: absolute;
             top: 50px;
@@ -138,7 +140,7 @@
             font-size: 48px;
             box-shadow: 0 0 30px rgba(74, 144, 226, 0.3);
         }
-
+    
         .tree {
             position: absolute;
             bottom: 60px;
@@ -149,7 +151,7 @@
             background-size: contain;
             background-repeat: no-repeat;
         }
-
+    
         .person {
             position: absolute;
             bottom: 60px;
@@ -159,7 +161,7 @@
             background: #000;
             border-radius: 10px 10px 0 0;
         }
-
+    
         .telescope {
             position: absolute;
             bottom: 80px;
@@ -170,7 +172,7 @@
             border-radius: 15px;
             transform: rotate(-15deg);
         }
-
+    
         .telescope::before {
             content: '';
             position: absolute;
@@ -181,7 +183,7 @@
             background: #333;
             border-radius: 5px;
         }
-
+    
         .stars {
             position: absolute;
             top: 0;
@@ -198,7 +200,7 @@
             background-size: 200px 100px;
             opacity: 0.6;
         }
-
+    
         .shooting-star {
             position: absolute;
             top: 20%;
@@ -209,13 +211,13 @@
             transform: rotate(-30deg);
             animation: shooting 3s infinite;
         }
-
+    
         @keyframes shooting {
             0% { opacity: 0; transform: translateX(-50px) rotate(-30deg); }
             50% { opacity: 1; }
             100% { opacity: 0; transform: translateX(50px) rotate(-30deg); }
         }
-
+    
         .stats-section {
             padding: 40px 80px;
             background: rgba(0,0,0,0.3);
@@ -224,30 +226,33 @@
             align-items: center;
             gap: 80px;
         }
-
+    
         .stat-item {
             text-align: center;
         }
-
+    
         .stat-number {
             font-size: 32px;
             font-weight: bold;
             color: #4a90e2;
             display: block;
         }
-
+    
         .stat-label {
             font-size: 14px;
             opacity: 0.7;
             margin-top: 5px;
         }
-
-        .about-section {
+    
+        .about-section, .sample-section, .contact-section {
             padding: 100px 80px;
+        }
+    
+        .about-section {
             background: linear-gradient(180deg, #1a1a3e 0%, #0a0a0a 100%);
             text-align: center;
         }
-
+    
         .section-subtitle {
             color: #4a90e2;
             font-size: 14px;
@@ -255,13 +260,13 @@
             text-transform: uppercase;
             letter-spacing: 2px;
         }
-
+    
         .section-title {
             font-size: 48px;
             font-weight: 300;
             margin-bottom: 40px;
         }
-
+    
         .about-text {
             max-width: 800px;
             margin: 0 auto 60px;
@@ -269,14 +274,14 @@
             line-height: 1.8;
             opacity: 0.8;
         }
-
+    
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             margin-bottom: 100px;
         }
-
+    
         .skill-card {
             background: rgba(255,255,255,0.05);
             padding: 40px 30px;
@@ -285,11 +290,11 @@
             border: 1px solid rgba(255,255,255,0.1);
             transition: transform 0.3s;
         }
-
+    
         .skill-card:hover {
             transform: translateY(-5px);
         }
-
+    
         .skill-icon {
             width: 60px;
             height: 60px;
@@ -301,20 +306,19 @@
             justify-content: center;
             font-size: 24px;
         }
-
+    
         .skill-title {
             font-size: 20px;
             margin-bottom: 15px;
         }
-
+    
         .skill-description {
             opacity: 0.7;
             line-height: 1.6;
             font-size: 14px;
         }
-
+    
         .sample-section {
-            padding: 100px 80px;
             background: linear-gradient(135deg, #1a1a3e 0%, #2d1b69 100%);
             position: relative;
             text-align: center;
@@ -325,6 +329,7 @@
             gap: 40px;
             margin-top: 60px;
         }
+    
         .sample-card {
             background: rgba(255,255,255,0.05);
             padding: 40px 30px;
@@ -336,8 +341,7 @@
             z-index: 1;
             overflow: hidden;
         }
-
-        /* لایه پایه برای همه کارت‌ها */
+    
         .sample-card::before {
             content: '';
             position: absolute;
@@ -351,70 +355,61 @@
             transition: opacity 0.4s ease-in-out;
             z-index: -1;
         }
-
+    
         .sample-card:hover {
             transform: translateY(-10px) scale(1.03);
             color: white;
         }
-
+    
         .sample-card:hover::before {
-            opacity: 0.4; /* شفافیت عکس هنگام هاور */
+            opacity: 0.4;
         }
-
-        /* --- عکس‌های مخصوص هر کارت --- */
-
-        /* عکس برای کارت اول (spooder_console) */
+    
         .sample-card:nth-child(1)::before {
             background-image: url('Screenshot 2025-06-18 082027.png');
         }
-
-        /* عکس برای کارت دوم (Falcon Client) */
+    
         .sample-card:nth-child(2)::before {
             background-image: url('Screenshot 2025-06-18 082435.png');
         }
-
-        /* عکس برای کارت سوم (Beauty Clinic Theme) */
+    
         .sample-card:nth-child(3)::before {
             background-image: url('Screenshot 2025-06-18 080757.png');
         }
-
-        /* عکس برای کارت چهارم (NerdIt - Figma) */
+    
         .sample-card:nth-child(4)::before {
             background-image: url('Screenshot 2025-06-18 080924.png');
         }
-
-
+    
         .sample-card h3, .sample-card p, .sample-card .btn {
             position: relative;
             z-index: 2;
         }
-
+    
         .sample-card h3 {
             font-size: 24px;
             margin-bottom: 15px;
         }
-
+    
         .sample-card p {
             opacity: 0.7;
             line-height: 1.6;
             font-size: 14px;
             margin-bottom: 20px;
         }
-
-
+    
         .contact-section {
-            padding: 100px 80px;
             background: #0a0a0a;
             display: flex;
             align-items: center;
             gap: 100px;
         }
-
+    
         .contact-visual {
             flex: 1;
             position: relative;
         }
-
+    
         .contact-card {
             height: 400px;
             background: linear-gradient(135deg, #1a1a3e, #2d1b69);
@@ -424,7 +419,7 @@
             position: relative;
             text-align: center;
         }
-
+    
         .contact-avatar {
             width: 80px;
             height: 80px;
@@ -436,23 +431,23 @@
             justify-content: center;
             font-size: 32px;
         }
-
+    
         .contact-info h3 {
             margin-bottom: 10px;
             font-size: 24px;
         }
-
+    
         .contact-info p {
             opacity: 0.7;
             margin-bottom: 30px;
         }
-
+    
         .contact-links {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
-
+    
         .contact-link {
             background: rgba(255,255,255,0.1);
             padding: 15px;
@@ -461,63 +456,63 @@
             color: white;
             transition: background 0.3s;
         }
-
+    
         .contact-link:hover {
             background: rgba(255,255,255,0.2);
         }
-
+    
         .contact-text {
             flex: 1;
         }
-
+    
         .contact-title {
             font-size: 36px;
             font-weight: 300;
             margin-bottom: 30px;
             line-height: 1.2;
         }
-
+    
         .contact-description {
             opacity: 0.7;
             line-height: 1.6;
             margin-bottom: 40px;
             font-size: 18px;
         }
-
+    
         .footer {
             background: #0a0a0a;
             padding: 60px 80px 40px;
             border-top: 1px solid rgba(255,255,255,0.1);
         }
-
+    
         .footer-content {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-bottom: 40px;
         }
-
+    
         .footer-section {
             margin: 0;
         }
-
+    
         .footer-section h4 {
             margin-bottom: 20px;
             font-size: 16px;
             text-align: center;
         }
-
+    
         .footer-section ul {
             list-style: none;
             display: flex;
             gap: 30px;
             align-items: center;
         }
-
+    
         .footer-section li {
             margin: 0;
         }
-
+    
         .footer-section a {
             color: rgba(255,255,255,0.7);
             text-decoration: none;
@@ -526,50 +521,85 @@
             padding: 10px 20px;
             border-radius: 5px;
         }
-
+    
         .footer-section a:hover {
             color: white;
             background: rgba(255,255,255,0.1);
             transform: translateY(-2px);
         }
-
+    
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.1);
             padding-top: 20px;
             text-align: center;
         }
-
+    
         @media (max-width: 768px) {
             .navbar {
-                padding: 20px 40px;
+                padding: 20px 20px; /* کاهش فاصله کنار */
                 flex-direction: column;
                 gap: 20px;
             }
             .nav-links {
                 gap: 20px;
+                /* برای اینکه لینک‌ها در یک خط جا شوند و به خط بعدی نروند */
+                flex-wrap: wrap; 
+                justify-content: center;
             }
             .hero-content {
                 flex-direction: column;
-                padding: 0 40px;
+                justify-content: center; /* مرکزیت بخش اصلی */
+                padding: 0 20px; /* کاهش فاصله کنار */
                 text-align: center;
             }
+    
+            /* کاهش اندازه فونت عنوان‌ها برای جلوگیری از به هم ریختگی */
             .hero-title {
-                font-size: 40px;
+                font-size: 38px; 
             }
+            .section-title {
+                font-size: 32px;
+            }
+            .contact-title {
+                font-size: 28px;
+            }
+            .hero-name {
+                font-size: 20px;
+            }
+            
+            /* کاهش فاصله کنار برای تمام بخش‌ها */
+            .about-section, .sample-section, .contact-section {
+                padding: 80px 20px;
+            }
+    
             .skills-grid {
                 grid-template-columns: 1fr;
             }
+    
             .contact-section {
                 flex-direction: column;
                 gap: 40px;
+                text-align: center;
             }
+    
             .stats-section {
                 flex-wrap: wrap;
                 gap: 40px;
+                padding: 40px 20px; /* کاهش فاصله کنار */
+            }
+    
+            .footer {
+                padding: 40px 20px; /* کاهش فاصله کنار */
             }
             .footer-section ul {
                 flex-direction: column;
                 gap: 15px;
+            }
+    
+            /* دکمه‌ها را در موبایل زیر هم قرار می‌دهد */
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -652,7 +682,7 @@
             <div class="sample-card">
                 <h3>FalconClient - Minecraft Launcher</h3>
                 <p>The frontend for the Falcon Client, designed to be user-friendly and visually appealing.</p>
-                <a href="https://github.com/MrRMansd01/falcon-client-front.git" class="btn btn-secondary" target="_blank">View on GitHub</a>
+                <a href="https://github.com/MrRMansd01/FalconClient---Minecraft-Launcher.git" class="btn btn-secondary" target="_blank">View on GitHub</a>
             </div>
             <div class="sample-card">
                 <h3>Beauty Clinic Theme</h3>
