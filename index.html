@@ -17,7 +17,6 @@
             background: #0a0a0a;
             color: white;
             overflow-x: hidden;
-            /* برای شکستن کلمات طولانی و جلوگیری از سرریز شدن متن */
             word-wrap: break-word; 
         }
     
@@ -26,7 +25,7 @@
             background: linear-gradient(180deg, #1a1a3e 0%, #2d1b69 50%, #4a2c7d 100%);
             position: relative;
             display: flex;
-            flex-direction: column;
+            flex-direction: column
         }
     
         .navbar {
@@ -142,49 +141,6 @@
             box-shadow: 0 0 30px rgba(74, 144, 226, 0.3);
         }
     
-        .tree {
-            position: absolute;
-            bottom: 60px;
-            left: 200px;
-            width: 100px;
-            height: 150px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150"><path d="M45 150 L45 100 L35 80 L25 60 L35 40 L45 20 L55 40 L65 60 L55 80 L45 100 Z" fill="%23000"/><circle cx="50" cy="50" r="40" fill="none" stroke="%23fff" stroke-width="2" opacity="0.8"/></svg>');
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-    
-        .person {
-            position: absolute;
-            bottom: 60px;
-            left: 250px;
-            width: 20px;
-            height: 40px;
-            background: #000;
-            border-radius: 10px 10px 0 0;
-        }
-    
-        .telescope {
-            position: absolute;
-            bottom: 80px;
-            right: 100px;
-            width: 60px;
-            height: 30px;
-            background: #333;
-            border-radius: 15px;
-            transform: rotate(-15deg);
-        }
-    
-        .telescope::before {
-            content: '';
-            position: absolute;
-            left: -20px;
-            top: 10px;
-            width: 20px;
-            height: 10px;
-            background: #333;
-            border-radius: 5px;
-        }
-    
         .stars {
             position: absolute;
             top: 0;
@@ -217,32 +173,6 @@
             0% { opacity: 0; transform: translateX(-50px) rotate(-30deg); }
             50% { opacity: 1; }
             100% { opacity: 0; transform: translateX(50px) rotate(-30deg); }
-        }
-    
-        .stats-section {
-            padding: 40px 80px;
-            background: rgba(0,0,0,0.3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 80px;
-        }
-    
-        .stat-item {
-            text-align: center;
-        }
-    
-        .stat-number {
-            font-size: 32px;
-            font-weight: bold;
-            color: #4a90e2;
-            display: block;
-        }
-    
-        .stat-label {
-            font-size: 14px;
-            opacity: 0.7;
-            margin-top: 5px;
         }
     
         .about-section, .sample-section, .contact-section {
@@ -278,7 +208,7 @@
     
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
             margin-bottom: 100px;
         }
@@ -366,7 +296,7 @@
             opacity: 0.4;
         }
     
-        .sample-card:nth-child(1)::before {
+        .sample-card.payeh-card::before {
             background-image: url('Screenshot 2025-06-18 082027.png');
         }
     
@@ -375,7 +305,7 @@
         }
     
         .sample-card:nth-child(3)::before {
-            background-image: url('Screenshot 2025-06-18 095927.png');
+            background-image: url('Screenshot 2025-06-18 080757.png');
         }
     
         .sample-card:nth-child(4)::before {
@@ -537,24 +467,22 @@
     
         @media (max-width: 768px) {
             .navbar {
-                padding: 20px 20px; /* کاهش فاصله کنار */
+                padding: 20px 20px;
                 flex-direction: column;
                 gap: 20px;
             }
             .nav-links {
                 gap: 20px;
-                /* برای اینکه لینک‌ها در یک خط جا شوند و به خط بعدی نروند */
                 flex-wrap: wrap; 
                 justify-content: center;
             }
             .hero-content {
                 flex-direction: column;
-                justify-content: center; /* مرکزیت بخش اصلی */
-                padding: 0 20px; /* کاهش فاصله کنار */
+                justify-content: center;
+                padding: 0 20px;
                 text-align: center;
             }
     
-            /* کاهش اندازه فونت عنوان‌ها برای جلوگیری از به هم ریختگی */
             .hero-title {
                 font-size: 38px; 
             }
@@ -568,7 +496,6 @@
                 font-size: 20px;
             }
             
-            /* کاهش فاصله کنار برای تمام بخش‌ها */
             .about-section, .sample-section, .contact-section {
                 padding: 80px 20px;
             }
@@ -586,18 +513,17 @@
             .stats-section {
                 flex-wrap: wrap;
                 gap: 40px;
-                padding: 40px 20px; /* کاهش فاصله کنار */
+                padding: 40px 20px;
             }
     
             .footer {
-                padding: 40px 20px; /* کاهش فاصله کنار */
+                padding: 40px 20px;
             }
             .footer-section ul {
                 flex-direction: column;
                 gap: 15px;
             }
     
-            /* دکمه‌ها را در موبایل زیر هم قرار می‌دهد */
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
@@ -606,7 +532,7 @@
     </style>
 </head>
 <body>
-    <div class="hero-section">
+    <div class="hero-section" id="home">
         <div class="stars"></div>
         <div class="shooting-star"></div>
         <nav class="navbar">
@@ -615,7 +541,8 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#sample">Sample</a></li>
-                <li><a href="#contact">HIRE ME</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#hire-me">HIRE ME</a></li>
             </ul>
         </nav>
         <div class="hero-content">
@@ -636,37 +563,57 @@
         <p class="about-text">
             I'm a full-stack developer and mobile app specialist dedicated to creating innovative digital solutions. With extensive experience in modern web and mobile technologies, I specialize in building user-centric applications that combine beautiful design with powerful functionality. My work focuses on delivering high-quality products that enhance user experiences and solve real-world problems.
         </p>
+    </div>
+
+    <div class="about-section" id="skills" style="padding-top: 0; background: #0a0a0a;">
+        <div class="section-subtitle">My Skills</div>
+        <h2 class="section-title">TECHNOLOGIES & EXPERTISE</h2>
         <div class="skills-grid">
             <div class="skill-card">
-                <div class="skill-icon">🎨</div>
-                <h3 class="skill-title">UI/UX Design</h3>
-                <p class="skill-description">Expert in creating intuitive and visually appealing user interfaces. Specialized in user research, wireframing, prototyping, and designing seamless user experiences across all platforms.</p>
-            </div>
-            <div class="skill-card">
                 <div class="skill-icon">📱</div>
-                <h3 class="skill-title">Mobile Development (Kotlin)</h3>
-                <p class="skill-description">Proficient in native Android development using Kotlin. Experienced in building robust mobile applications with clean architecture, MVVM pattern, and modern Android development practices.</p>
+                <h3 class="skill-title">Modern Android Development</h3>
+                <p class="skill-description">Building high-performance, native Android applications using Kotlin and Jetpack Compose. Expert in MVVM architecture, dependency injection with Hilt, and creating fluid, responsive UIs.</p>
             </div>
             <div class="skill-card">
                 <div class="skill-icon">🌐</div>
-                <h3 class="skill-title">Web Development (HTML, React)</h3>
-                <p class="skill-description">Advanced skills in modern web technologies including HTML5, CSS3, JavaScript, and React. Expert in creating responsive, interactive, and performance-optimized web applications.</p>
+                <h3 class="skill-title">Full-Stack Web Development</h3>
+                <p class="skill-description">Proficient in creating dynamic web applications with React for the frontend and Node.js/Express.js for the backend. Skilled in building RESTful APIs and managing server-side logic.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">💾</div>
+                <h3 class="skill-title">Backend & Database (BaaS)</h3>
+                <p class="skill-description">Experienced in leveraging Backend-as-a-Service platforms like Supabase and Firebase for rapid development, including database management (PostgreSQL), real-time features, and secure authentication.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🎨</div>
+                <h3 class="skill-title">UI/UX & Product Design</h3>
+                <p class="skill-description">A strong eye for design and user experience. Proficient in creating intuitive interfaces from wireframes to final implementation, ensuring a seamless and engaging user journey. Skilled in using Figma for design and prototyping.</p>
             </div>
             <div class="skill-card">
                 <div class="skill-icon">🔗</div>
-                <h3 class="skill-title">Full-Stack Integration</h3>
-                <p class="skill-description">Comprehensive understanding of full-stack development from database design to frontend implementation. Experienced in API development, microservices, and seamless system integration.</p>
+                <h3 class="skill-title">API & System Integration</h3>
+                <p class="skill-description">Expert in designing and integrating APIs to connect various parts of an application. Capable of ensuring smooth data flow between the client, server, and third-party services.</p>
             </div>
             <div class="skill-card">
                 <div class="skill-icon">🚀</div>
-                <h3 class="skill-title">Product Development</h3>
-                <p class="skill-description">Strategic approach to product lifecycle management from ideation to deployment. Experienced in agile methodologies, MVP development, and iterative product improvement processes.</p>
+                <h3 class="skill-title">Agile & Product Management</h3>
+                <p class="skill-description">Strategic approach to the product lifecycle, from ideation and MVP development to deployment and iterative improvement. Experienced in working within agile frameworks to deliver high-quality products efficiently.</p>
             </div>
             <div class="skill-card">
-                <div class="skill-icon">⚡</div>
-                <h3 class="skill-title">Performance Optimization</h3>
-                <p class="skill-description">Expert in identifying and resolving performance bottlenecks. Specialized in code optimization, database tuning, caching strategies, and improving application speed and efficiency.</p>
+                <div class="skill-icon">☁️</div>
+                <h3 class="skill-title">DevOps & CI/CD</h3>
+                <p class="skill-description">Experience with modern deployment pipelines, including continuous integration and deployment (CI/CD). Proficient in deploying applications to cloud services and managing production environments.</p>
             </div>
+            <div class="skill-card">
+                <div class="skill-icon">🗃️</div>
+                <h3 class="skill-title">Advanced Database Management</h3>
+                <p class="skill-description">Deep understanding of relational databases like PostgreSQL. Skilled in data modeling, query optimization, and ensuring data integrity for complex applications.</p>
+            </div>
+            <!-- <div class="skill-card">
+                <div class="skill-icon">🔄</div>
+                <h3 class="skill-title">Cross-Platform Strategy</h3>
+                <p class="skill-description">Expertise in architecting and developing solutions that provide a seamless and consistent user experience across different platforms, including Android, Web, and Desktop.</p>
+            </div> -->
         </div>
     </div>
 
@@ -674,25 +621,25 @@
         <div class="section-subtitle">My Sample</div>
         <h2 class="section-title">CHECK OUT MY WORK</h2>
         <div class="sample-grid">
+            <div class="sample-card payeh-card">
+                <h3>Payeh (Spooder) Educational Platform</h3>
+                <p>A comprehensive educational ecosystem featuring an Android app (Kotlin/Compose), web app, and management console. This project showcases full-stack development, Supabase integration, and modern UI design.</p>
+                <a href="https://github.com/MrRMansd01" class="btn btn-secondary" target="_blank">View on GitHub</a>
+            </div>
             <div class="sample-card">
                 <h3>spooder_console</h3>
-                <p>This is a task management system with a Persian interface built using expression.js and pure javascript.</p>
+                <p>A task management system with a Persian interface built using Express.js and pure JavaScript, serving as the backend for the Payeh platform.</p>
                 <a href="https://github.com/MrRMansd01/spooder_console.git" class="btn btn-secondary" target="_blank">View on GitHub</a>
             </div>
             <div class="sample-card">
                 <h3>FalconClient - Minecraft Launcher</h3>
-                <p>The frontend for the Falcon Client, designed to be user-friendly and visually appealing.</p>
+                <p>The frontend for the Falcon Client, a Minecraft launcher designed to be user-friendly and visually appealing.</p>
                 <a href="https://github.com/MrRMansd01/FalconClient---Minecraft-Launcher.git" class="btn btn-secondary" target="_blank">View on GitHub</a>
             </div>
             <div class="sample-card">
                 <h3>Beauty Clinic Theme</h3>
-                <p>A WordPress theme for beauty clinics and related businesses.</p>
+                <p>A custom WordPress theme designed for beauty clinics and related businesses, focusing on aesthetics and user experience.</p>
                 <a href="https://github.com/MrRMansd01/beauty-clinic.git" class="btn btn-secondary" target="_blank">View on GitHub</a>
-            </div>
-            <div class="sample-card">
-                <h3>NerdIt - Figma Design</h3>
-                <p>A Figma design for a project called NerdIt, demonstrating my UI/UX design skills.</p>
-                <a href="https://www.figma.com/design/ocDstGBgio7I3HDxfY9Zni/NerdIt?node-id=17-25&t=ZjBLq5fqAZYVhjNs-1" class="btn btn-secondary" target="_blank">View on Figma</a>
             </div>
         </div>
     </div>
@@ -706,7 +653,7 @@
                     <p>Full Stack Developer</p>
                     <div class="contact-links">
                         <a href="mailto:mr.rsd01@outlook.com" class="contact-link">📧 mr.rsd01@outlook.com</a>
-                        <a href="tel:09158973979" class="contact-link">📱 +98 915 897 3979</a>
+                        <a href="tel:09158973979" class="contact-link">� +98 915 897 3979</a>
                     </div>
                 </div>
             </div>
@@ -737,3 +684,4 @@
     </footer>
 </body>
 </html>
+�
